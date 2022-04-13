@@ -1,4 +1,7 @@
 #include <SFML/Window.hpp>
+#include <iostream>
+
+
 
 int main()
 {
@@ -15,7 +18,9 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
+
     }
+        std::cout << "test" << std::endl;
 
     return 0;
 }
