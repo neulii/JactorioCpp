@@ -10,14 +10,20 @@ class Field : public Entity
         int posX;
         int posY;
 
+        int width;
+        int height;
+
+        sf::RectangleShape field;
+        sf::Color rCol;
+
     public :
 
-        Field(int x,int y);
+        Field(int x,int y, int width, int height);
         
         void update(long dT);
         void render(sf::RenderWindow& window); 
        
-
+        void setColor(sf::Color color);
 
 
 };

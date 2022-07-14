@@ -13,8 +13,13 @@ std::vector<Entity*> entitys;
 
 int main()
 {
-    Field* f = new Field(10,10);
+    Field* f = new Field(10,10,100,100);
+    Field* aa = new Field(90,20, 100,100);
+    aa->setColor(sf::Color::Red);
+
+    
     entitys.push_back(f);
+    entitys.push_back(aa);
 
     sf::Clock clock;
 
