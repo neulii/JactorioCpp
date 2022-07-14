@@ -51,6 +51,7 @@ int main()
         sf::Time time = clock.getElapsedTime(); 
         clock.restart(); 
         update(time.asMicroseconds());
+    
         render(window);
         
     }
@@ -72,7 +73,12 @@ void render(sf::RenderWindow& window)
 
 void update(long dT)
 {
+    for(Entity* e: entitys)
+    {
+        e->update(dT);
 
+    } 
+    
     std::cout << dT << std::endl;
 
 }
