@@ -1,11 +1,23 @@
-#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
 #include <iostream>
+#include "Entity.hpp"
+#include "Field.hpp"
+#include <vector>
 
 
+
+void render(sf::RenderWindow& window);
+void update(long dT);
+
+std::vector<Entity*> entitys;
 
 int main()
 {
-    sf::Window window(sf::VideoMode(800, 600), "My window");
+    Field* f = new Field(10,10);
+    entitys.push_back(f);
+
+
+    sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
 
     // run the program as long as the window is open
     while (window.isOpen())
@@ -17,10 +29,38 @@ int main()
             // "close requested" event: we close the window
             if (event.type == sf::Event::Closed)
                 window.close();
-        }
 
+			if (event.type == sf::Event::KeyPressed)
+			{
+				std::cout << "Exiting" << std::endl;
+				window.close();
+			}
+        }
+        long dT = 1;
+
+        update(dT);
+        render(window);
+        
     }
-        std::cout << "test" << std::endl;
 
     return 0;
+}
+
+void render(sf::RenderWindow& window)
+{
+        window.clear(sf::Color::Blue);  //clear window
+        //render here all stuff
+        
+        for(Entity* e : entitys)
+        {
+            e->render(window);
+        }
+        window.display();
+}
+
+void update(long dT)
+{
+
+
+
 }

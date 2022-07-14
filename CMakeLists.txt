@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-SET(PROJ_NAME "JactorioCpp")
+SET(PROJ_NAME "s")
 PROJECT(${PROJ_NAME})
 
 set(SFML_DIR "${CMAKE_CURRENT_SOURCE_DIR}/SFML-2.5.1/lib/cmake/SFML")
