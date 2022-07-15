@@ -4,7 +4,8 @@
 #include "Field.hpp"
 #include <vector>
 
-
+const int WINDOW_HEIGHT = 600;
+const int WINDOW_WIDTH = 800;
 
 void render(sf::RenderWindow& window);
 void update(long dT);
@@ -23,8 +24,8 @@ int main()
 
     sf::Clock clock;
 
-    sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
-
+    sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "My window");
+    
     // run the program as long as the window is open
     while (window.isOpen())
     {
@@ -47,7 +48,7 @@ int main()
         }
 
         //long dT = 1;
-
+        
         sf::Time time = clock.getElapsedTime(); 
         clock.restart(); 
         update(time.asMicroseconds());
@@ -61,7 +62,7 @@ int main()
 
 void render(sf::RenderWindow& window)
 {
-        window.clear(sf::Color::Blue);  //clear window
+        window.clear(sf::Color::Black);  //clear window
         //render here all stuff
         
         for(Entity* e : entitys)
