@@ -26,3 +26,13 @@ void Field::setColor(sf::Color color)
 {
     field.setFillColor(color);
 }
+
+int Field::getX()
+{
+	return this->posX;
+}
+
+int Field::getY()
+{
+	return this->posY;
+}

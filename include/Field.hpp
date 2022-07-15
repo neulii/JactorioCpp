@@ -24,6 +24,10 @@ class Field : public Entity
         void render(sf::RenderWindow& window); 
        
         void setColor(sf::Color color);
+		
+		int getX();
+		int getY();
+		
 
 
 };
