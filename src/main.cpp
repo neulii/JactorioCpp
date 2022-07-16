@@ -94,3 +94,15 @@ void update(long dT)
     std::cout << dT << std::endl;
 
 }
+
+int CoordToLine(int x, int y)
+{
+
+    
+}
+
+sf::Vector2i LineToCoord(int lineCoord)
+{
+
+
+}
