@@ -36,3 +36,8 @@ int Field::getY()
 {
 	return this->posY;
 }
+
+void Field::toConsole()
+{
+    std::cout << "X: " << posX <<  "  Y: " << +posY << std::endl;
+}

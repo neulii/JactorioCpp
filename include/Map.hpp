@@ -14,6 +14,8 @@ class Map : public Entity
 		int fieldHeight;
 		int fieldWidth;
 		
+		sf::Vector2i mapPosition;
+
 		std::vector<Field*> fields;
 			
 		//for calculating Coords to LineCoords
@@ -21,7 +23,7 @@ class Map : public Entity
 		static sf::Vector2i LineToCoord(int lineCoord, int width, int height);
 		
 	public:
-		Map(int mapWidth, int mapHeight, int fieldWidth, int fieldHeight);
+		Map(int mapWidth, int mapHeight, int fieldWidth, int fieldHeight, sf::Vector2i mPosition);
 		
 		void render(sf::RenderWindow& window);
 		void update(long dT);

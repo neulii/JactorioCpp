@@ -3,6 +3,7 @@
 
 #include "Entity.hpp"
 #include "SFML/Graphics.hpp"
+#include <iostream>
 
 class Field : public Entity
 {
@@ -28,7 +29,7 @@ class Field : public Entity
 		int getX();
 		int getY();
 		
-
+        void toConsole();
 
 };
 

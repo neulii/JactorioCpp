@@ -14,19 +14,20 @@ void update(long dT);
 
 //Global variables
 std::vector<Entity*> entitys;
+Map* map = new Map(10, 10, 10, 10, sf::Vector2i(0,0));
 
 //main Function
 int main()
 {
-    Field* f = new Field(10,10,100,100);
-    Field* aa = new Field(90,20, 100,100);
-    aa->setColor(sf::Color::Red);
+    //Field* f = new Field(10,10,100,100);
+    //Field* aa = new Field(90,20, 100,100);
+    //aa->setColor(sf::Color::Red);
     
-    entitys.push_back(f);
-    entitys.push_back(aa);
+    //entitys.push_back(f);
+    //entitys.push_back(aa);
+    entitys.push_back(map);
 
     sf::Clock clock;
-    Map* map = new Map(10, 10, 10, 10);
 
     sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
 
@@ -68,11 +69,14 @@ void render(sf::RenderWindow& window)
 {
         window.clear(sf::Color::Blue);  //clear window
         //render here all stuff
-        
+       
+
+        //paint all objects from Game
         for(Entity* e : entitys)
         {
             e->render(window);
         }
+        
         window.display();
 }
 

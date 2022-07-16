@@ -1,20 +1,30 @@
 #include "Map.hpp"
 
-Map::Map(int mapWidth, int mapHeight, int fieldWidth, int fieldHeight)
+Map::Map(int mapWidth, int mapHeight, int fieldWidth, int fieldHeight, sf::Vector2i mPosition)
 {
 	this->mapHeight = mapHeight;
 	this->mapWidth = mapWidth;
 
 	this->fieldWidth = fieldWidth;
 	this->fieldHeight = fieldHeight;
+	
+	this->mapPosition = mapPosition;
 
 	//generate Map
 
 	for (int i = 0; i < mapWidth * mapHeight; i++)
 	{
 		//calculate Position of new Field
-
-		fields.at(i) = new Field()
+		sf::Vector2i tempCoord = LineToCoord(i, mapWidth, mapHeight);
+	
+		int tempX = 0;
+		int tempY = 0;
+	
+		tempX = tempCoord.x * fieldWidth+ mapPosition.x;
+		tempY = tempCoord.y * fieldHeight + mapPosition.y;
+		
+		fields.push_back(new Field(tempX, tempY, tempCoord.x, tempCoord.y));
+		
 	}
 
 
@@ -22,7 +32,10 @@ Map::Map(int mapWidth, int mapHeight, int fieldWidth, int fieldHeight)
 
 void Map::render(sf::RenderWindow& window)
 {
-	
+	for (Field *f : fields)
+	{
+		f->render(window);
+	}
 
 }
 
