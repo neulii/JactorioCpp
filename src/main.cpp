@@ -3,14 +3,25 @@
 #include "Entity.hpp"
 #include "Field.hpp"
 #include <vector>
+#include "Map.hpp"
 
 
 
+//Entity Functions
 void render(sf::RenderWindow& window);
 void update(long dT);
 
+//utily Functions
+int CoordToLine(int x, int y);
+sf::Vector2i LineToCoord(int lineCoord);
+
+
+
+//Global variables
 std::vector<Entity*> entitys;
 
+
+//main Function
 int main()
 {
     Field* f = new Field(10,10,100,100);
@@ -22,6 +33,7 @@ int main()
     entitys.push_back(aa);
 
     sf::Clock clock;
+    Map* map = new Map(10, 10, 10, 10);
 
     sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
 
