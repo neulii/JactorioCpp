@@ -11,15 +11,9 @@
 void render(sf::RenderWindow& window);
 void update(long dT);
 
-//utily Functions
-int CoordToLine(int x, int y);
-sf::Vector2i LineToCoord(int lineCoord);
-
-
 
 //Global variables
 std::vector<Entity*> entitys;
-
 
 //main Function
 int main()
@@ -27,7 +21,6 @@ int main()
     Field* f = new Field(10,10,100,100);
     Field* aa = new Field(90,20, 100,100);
     aa->setColor(sf::Color::Red);
-
     
     entitys.push_back(f);
     entitys.push_back(aa);
@@ -91,22 +84,9 @@ void update(long dT)
 
     } 
     
-    std::cout << dT << std::endl;
+    //    std::cout << dT << std::endl;
 
 }
 
-int CoordToLine(int x, int y)
-{
-    return 0;
 
 
-}
-
-sf::Vector2i LineToCoord(int lineCoord)
-{
-
-    sf::Vector2i coord;
-
-    return coord;
-
-}

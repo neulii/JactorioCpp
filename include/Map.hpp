@@ -16,12 +16,17 @@ class Map : public Entity
 		
 		std::vector<Field*> fields;
 			
+		//for calculating Coords to LineCoords
+		static int CoordToLine(int x, int y, int width, int height);
+		static sf::Vector2i LineToCoord(int lineCoord, int width, int height);
+		
 	public:
 		Map(int mapWidth, int mapHeight, int fieldWidth, int fieldHeight);
 		
 		void render(sf::RenderWindow& window);
 		void update(long dT);
-		
+	
+	
 
 
 };
