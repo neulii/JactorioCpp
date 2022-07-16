@@ -5,8 +5,7 @@
 #include <vector>
 #include "Map.hpp"
 
-const int WINDOW_HEIGHT = 600;
-const int WINDOW_WIDTH = 800;
+
 
 //Entity Functions
 void render(sf::RenderWindow& window);
@@ -36,8 +35,8 @@ int main()
     sf::Clock clock;
     Map* map = new Map(10, 10, 10, 10);
 
-    sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "My window");
-    
+    sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
+
     // run the program as long as the window is open
     while (window.isOpen())
     {
@@ -60,7 +59,7 @@ int main()
         }
 
         //long dT = 1;
-        
+
         sf::Time time = clock.getElapsedTime(); 
         clock.restart(); 
         update(time.asMicroseconds());
@@ -74,7 +73,7 @@ int main()
 
 void render(sf::RenderWindow& window)
 {
-        window.clear(sf::Color::Black);  //clear window
+        window.clear(sf::Color::Blue);  //clear window
         //render here all stuff
         
         for(Entity* e : entitys)
@@ -98,12 +97,16 @@ void update(long dT)
 
 int CoordToLine(int x, int y)
 {
+    return 0;
 
-    
+
 }
 
 sf::Vector2i LineToCoord(int lineCoord)
 {
 
+    sf::Vector2i coord;
+
+    return coord;
 
 }
