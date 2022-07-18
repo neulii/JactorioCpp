@@ -16,17 +16,21 @@ Map::Map(int mapWidth, int mapHeight, int fieldWidth, int fieldHeight, sf::Vecto
 	{
 		//calculate Position of new Field
 		sf::Vector2i tempCoord = LineToCoord(i, mapWidth, mapHeight);
-	
+		std::cout << "line: " << tempCoord.x << " / " << tempCoord.y << std::endl;
 		int tempX = 0;
 		int tempY = 0;
 	
 		tempX = tempCoord.x * fieldWidth+ mapPosition.x;
 		tempY = tempCoord.y * fieldHeight + mapPosition.y;
+				
+		Field* f = new Field(tempX, tempY, fieldHeight, fieldWidth);
 		
-		fields.push_back(new Field(tempX, tempY, tempCoord.x, tempCoord.y));
-		
-	}
+		f->setColor(sf::Color(i*2,255-i*2, 0));
 
+		fields.push_back(f);
+	
+	}
+		
 
 }
 
@@ -50,9 +54,10 @@ sf::Vector2i Map::LineToCoord(int lineCoord, int width, int height)
 	sf::Vector2i coord;
 	int x = 0;
 	int y = 0;
+	x = lineCoord % width;
 
-	y = lineCoord % width;
-	x = lineCoord - y * x;
+	y = lineCoord / width;
+	//x = lineCoord - y * x;
 
 	coord.x = x;
 	coord.y = y;

@@ -13,7 +13,8 @@ class Map : public Entity
 
 		int fieldHeight;
 		int fieldWidth;
-		
+	
+		//the Position of the Map
 		sf::Vector2i mapPosition;
 
 		std::vector<Field*> fields;
