@@ -3,7 +3,6 @@
 #include "Entity.hpp"
 //#include "Field.hpp"
 #include <vector>
-#include "Map.hpp"
 #include "GameField.hpp"
 
 
@@ -14,7 +13,17 @@ void update(long dT);
 
 //Global variables
 std::vector<Entity*> entitys;
-Map* map = new Map(10, 10, 10, 10, sf::Vector2i(0,0));
+//Map* map = new Map(10, 10, 10, 10, sf::Vector2i(0,0));
+
+std::string mapString =
+    "GGGGGGGGGG"
+    "WWWWWWWWWW"
+    "GGGGGGGGGG"
+    "GGGGGGGGGG";
+
+std::vector<FieldType> mapString = {
+    4
+}
 
 //main Function
 int main()
@@ -27,7 +36,7 @@ int main()
     
     //entitys.push_back(f);
     //entitys.push_back(aa);
-    entitys.push_back(map);
+ //   entitys.push_back(map);
 
     sf::Clock clock;
 
