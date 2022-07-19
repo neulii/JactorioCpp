@@ -1,10 +1,10 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "Entity.hpp"
-#include "Field.hpp"
+//#include "Field.hpp"
 #include <vector>
 #include "Map.hpp"
-
+#include "GameField.hpp"
 
 
 //Entity Functions
@@ -19,6 +19,8 @@ Map* map = new Map(10, 10, 10, 10, sf::Vector2i(0,0));
 //main Function
 int main()
 {
+	GameField* gf = new GameField(10,10,10,10,FieldType::Grass);
+       
     //Field* f = new Field(10,10,100,100);
     //Field* aa = new Field(90,20, 100,100);
     //aa->setColor(sf::Color::Red);
