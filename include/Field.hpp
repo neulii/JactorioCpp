@@ -4,6 +4,7 @@
 #include "Entity.hpp"
 #include "SFML/Graphics.hpp"
 #include <iostream>
+#include "FieldTypes.hpp"
 
 class Field : public Entity
 {
@@ -16,11 +17,14 @@ class Field : public Entity
 
         sf::RectangleShape field;
         sf::Color rCol;
+       
+        FieldType type;
 
     public :
 
-        Field(int x,int y, int width, int height);
-        
+        Field(int x, int y, int width, int height);
+        Field(int x, int y, int width, int height, FieldType type);
+
         void update(long dT);
         void render(sf::RenderWindow& window); 
        

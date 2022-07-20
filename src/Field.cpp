@@ -9,7 +9,14 @@ Field::Field(int x, int y, int width, int height)
 
     field = sf::RectangleShape(sf::Vector2f(width,height));
     field.setPosition(posX,posY);
+    this->type = FieldType::Blank;
 
+}
+
+Field::Field(int x, int y, int width, int height, FieldType type)
+    :Field(x, y, width, height)
+{
+    this->type= type;
 }
 
 void Field::render(sf::RenderWindow& window)

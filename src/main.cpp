@@ -1,10 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "Entity.hpp"
-//#include "Field.hpp"
 #include <vector>
-#include "GameField.hpp"
-
+#include "FieldTypes.hpp"
+#include "Map.hpp"
 
 //Entity Functions
 void render(sf::RenderWindow& window);
@@ -12,35 +11,34 @@ void update(long dT);
 
 
 //Global variables
+
+sf::Vector2i mapSize(10, 4);
+sf::Vector2i fieldSize(100, 100);
+sf::Vector2i mapPosition(0, 0);
+
+int windowWidth = mapSize.x * fieldSize.x;
+int windowHeight = mapSize.y * fieldSize.y;
+
 std::vector<Entity*> entitys;
-//Map* map = new Map(10, 10, 10, 10, sf::Vector2i(0,0));
 
 std::string mapString =
-    "GGGGGGGGGG"
-    "WWWWWWWWWW"
-    "GGGGGGGGGG"
-    "GGGGGGGGGG";
+    "0000000000"
+    "1111111111"
+    "2222222222"
+    "1111111111";
 
-std::vector<FieldType> mapString = {
-    4
-}
+Map* map = new Map(mapSize, fieldSize, mapPosition, mapString);
+
 
 //main Function
 int main()
 {
-	GameField* gf = new GameField(10,10,10,10,FieldType::Grass);
-       
-    //Field* f = new Field(10,10,100,100);
-    //Field* aa = new Field(90,20, 100,100);
-    //aa->setColor(sf::Color::Red);
     
-    //entitys.push_back(f);
-    //entitys.push_back(aa);
- //   entitys.push_back(map);
+    entitys.push_back(map);
 
     sf::Clock clock;
 
-    sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
+    sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "My window");
 
     // run the program as long as the window is open
     while (window.isOpen())
