@@ -69,11 +69,6 @@ void Map::generateMap()
 //generate Map with mapstring
 void Map::generateMap(std::string mapString)
 {
-	//first check if Mapstring is valid
-	long mustFields = (mapSize.x) * (mapSize.y);
-	std::cout << "fields must have: " << mustFields << " /   Fields have: " << mapString.size();
-
-
 		for (int i = 0; i < mapSize.x * mapSize.y; i++)
 		{
 			//calculate Position of new Field
@@ -101,6 +96,9 @@ void Map::generateMap(std::string mapString)
 			}
 			else
 			{
+				//check if string is valid
+				long mustFields = (mapSize.x) * (mapSize.y);
+	
 				if (mustFields != mapString.size())
 				{
 					std::cout << "MapString passt nicht zur Groessenangabe!! -> map wird nicht generiert!!" << std::endl;
@@ -109,7 +107,6 @@ void Map::generateMap(std::string mapString)
 
 
 				int type = mapString.at(i) - 48;
-				std::cout << mapString.at(i) << "   " << type << std::endl;
 
 				f = new Field(tempX, tempY, fieldSize.x, fieldSize.y, static_cast<FieldType>(type));
 	
