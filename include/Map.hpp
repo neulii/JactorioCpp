@@ -22,13 +22,13 @@ class Map : public Entity
 		static sf::Vector2i LineToCoord(int lineCoord, int width, int height);
 		
 	public:
-		
+		//generate map with string
+		Map(sf::Vector2i mapSize, sf::Vector2i fieldSize, sf::Vector2i mapPosition, std::string mapString);
+
 		//generate blank map	
 		Map(sf::Vector2i mapSize, sf::Vector2i fieldSize, sf::Vector2i mapPosition);
 		
-		//generate map with string
-		Map(sf::Vector2i mapSize, sf::Vector2i fieldSize, sf::Vector2i mapPosition, std::string mapString);
-		
+	
 		void generateMap();
 		void generateMap(std::string mapString);
 

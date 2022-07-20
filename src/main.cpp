@@ -27,7 +27,8 @@ std::string mapString =
     "2222222222"
     "1111111111";
 
-Map* map = new Map(mapSize, fieldSize, mapPosition, mapString);
+Map* map = new Map(mapSize, fieldSize, mapPosition ,mapString);
+//Map* map = new Map(mapSize, fieldSize, mapPosition);
 
 
 //main Function
