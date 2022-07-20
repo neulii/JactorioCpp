@@ -69,6 +69,7 @@ void Map::generateMap()
 //generate Map with mapstring
 void Map::generateMap(std::string mapString)
 {
+
 		for (int i = 0; i < mapSize.x * mapSize.y; i++)
 		{
 			//calculate Position of new Field

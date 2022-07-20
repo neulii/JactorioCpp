@@ -9,6 +9,8 @@
 void render(sf::RenderWindow& window);
 void update(long dT);
 
+void loadRessources();
+void loadFieldTextures(std::vector<sf::Texture*> textures);
 
 //Global variables
 
@@ -18,6 +20,9 @@ sf::Vector2i mapPosition(0, 0);
 
 int windowWidth = mapSize.x * fieldSize.x;
 int windowHeight = mapSize.y * fieldSize.y;
+
+std::vector<sf::Texture*> fieldTextures;
+
 
 std::vector<Entity*> entitys;
 
@@ -31,10 +36,12 @@ Map* map = new Map(mapSize, fieldSize, mapPosition ,mapString);
 //Map* map = new Map(mapSize, fieldSize, mapPosition);
 
 
+
 //main Function
 int main()
 {
-    
+    loadRessources();
+ 
     entitys.push_back(map);
 
     sf::Clock clock;
@@ -102,5 +109,17 @@ void update(long dT)
 
 }
 
+//Load all resources
+void loadRessources()
+{
+    loadFieldTextures(fieldTextures);
 
+
+}
+
+
+//load Field Textures
+void loadFieldTextures(std::vector<sf::Texture*> textures) {
+   //TODO load field textrues 
+}
 
