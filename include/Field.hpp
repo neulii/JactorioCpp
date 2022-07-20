@@ -19,6 +19,7 @@ class Field : public Entity
         sf::Color rCol;
        
         FieldType type;
+        sf::Sprite sprite;
 
     public :
 
@@ -34,6 +35,10 @@ class Field : public Entity
 		int getY();
 		
         void toConsole();
+        
+        void setSprite(sf::Sprite sprite);
+
+        FieldType getType();
 
 };
 

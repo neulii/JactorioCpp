@@ -15,8 +15,8 @@ Map::Map(sf::Vector2i mapSize, sf::Vector2i fieldSize, sf::Vector2i mapPosition,
 
 	this->mapString = mapString;
 	generateMap(this->mapString);
-	/*
-	*/
+
+
 }
 
 
@@ -117,6 +117,28 @@ void Map::generateMap(std::string mapString)
 			fields.push_back(f);
 
 		}
+
+
+}
+
+void Map::generateSprites(std::vector<sf::Texture> textures)
+{
+	for (int i = 0; i < textures.size(); i++)
+	{
+		
+		sf::Sprite sp;
+		sp.setPosition(fields.at(i)->getX(), fields.at(i)->getY());
+		sp.setTexture(textures.at(
+			fields.at(i)->getType()
+		));
+
+		
+
+
+
+
+
+	}
 
 
 }

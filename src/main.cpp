@@ -10,7 +10,7 @@ void render(sf::RenderWindow& window);
 void update(long dT);
 
 void loadRessources();
-void loadFieldTextures(std::vector<sf::Texture*> textures);
+void loadFieldTextures(std::vector<sf::Texture> textures);
 
 //Global variables
 
@@ -21,7 +21,7 @@ sf::Vector2i mapPosition(0, 0);
 int windowWidth = mapSize.x * fieldSize.x;
 int windowHeight = mapSize.y * fieldSize.y;
 
-std::vector<sf::Texture*> fieldTextures;
+std::vector<sf::Texture> fieldTextures;
 
 
 std::vector<Entity*> entitys;
@@ -29,7 +29,7 @@ std::vector<Entity*> entitys;
 std::string mapString =
     "0000000000"
     "1111111111"
-    "2222222222"
+    "1111111111"
     "1111111111";
 
 Map* map = new Map(mapSize, fieldSize, mapPosition ,mapString);
@@ -41,8 +41,9 @@ Map* map = new Map(mapSize, fieldSize, mapPosition ,mapString);
 int main()
 {
     loadRessources();
- 
     entitys.push_back(map);
+    map->generateSprites(fieldTextures);
+
 
     sf::Clock clock;
 
@@ -119,7 +120,28 @@ void loadRessources()
 
 
 //load Field Textures
-void loadFieldTextures(std::vector<sf::Texture*> textures) {
-   //TODO load field textrues 
+void loadFieldTextures(std::vector<sf::Texture> textures) {
+
+    sf::Texture tex;
+
+
+    tex.loadFromFile("res/grass.png");
+    //textures.push_back(tex);
+    /*
+    tex.loadFromFile("res/stone.png");
+    textures.push_back(tex);
+    tex.loadFromFile("res/stone.png");
+    textures.push_back(tex);
+
+    tex.loadFromFile("res/stone.png");
+    textures.push_back(tex);
+
+    tex.loadFromFile("res/stone.png");
+    textures.push_back(tex);
+    */
+
+
+
+
 }
 

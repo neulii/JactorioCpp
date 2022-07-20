@@ -34,6 +34,9 @@ class Map : public Entity
 
 		void render(sf::RenderWindow& window);
 		void update(long dT);
+
+		void generateSprites(std::vector<sf::Texture> texures);
+
 	
 	
 

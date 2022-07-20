@@ -23,25 +23,7 @@ Field::Field(int x, int y, int width, int height, FieldType type)
     this->type= type;
 
 
-    switch (this->type)
-    {
-    case FieldType::Blank:
-        break;
-
-    case FieldType::Grass:
-        break;
     
-    case FieldType::Stone:
-        break;
-     
-    case FieldType::Water:
-        break;
-    
-    
-    default:
-        break;
-    }
-
 
 
 
@@ -54,7 +36,7 @@ Field::Field(int x, int y, int width, int height, FieldType type)
 void Field::render(sf::RenderWindow& window)
 {
     window.draw(field);
-
+    window.draw(sprite);
 }
 
 void Field::update(long dT)
@@ -79,4 +61,14 @@ int Field::getY()
 void Field::toConsole()
 {
     std::cout << "X: " << posX <<  "  Y: " << +posY << std::endl;
+}
+
+FieldType Field::getType()
+{
+    return  type;
+}
+
+void Field::setSprite(sf::Sprite sprite)
+{
+    this->sprite = sprite;
 }
