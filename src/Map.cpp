@@ -107,18 +107,12 @@ void Map::generateMap(std::string mapString)
 					return;
 				}
 
-				
-				
-				FieldType tempType = FieldType::Blank;
-				
-				//TODO gehört noch geklärt
 
-				int type = mapString.at(i) + 48;
-				//std::cout << mapString.at(i) << "   " << type << std::endl;
+				int type = mapString.at(i) - 48;
+				std::cout << mapString.at(i) << "   " << type << std::endl;
 
-				f = new Field(tempX, tempY, fieldSize.x, fieldSize.y, tempType);
+				f = new Field(tempX, tempY, fieldSize.x, fieldSize.y, static_cast<FieldType>(type));
 	
-			
 				f->setColor(sf::Color( 255-i * 2,0,0 ));
 			}
 		
